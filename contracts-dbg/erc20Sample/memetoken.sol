@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity ^0.8.0;
+pragma solidity 0.8.6;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
@@ -8,15 +8,14 @@ import "@openzeppelin/contracts/utils/math/SafeMath.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 import "@openzeppelin/contracts/security/ReentrancyGuard.sol";
 
-
-contract ReverseCramerTest is IERC20, Ownable {
+contract MemeToken is IERC20, Ownable, ERC20Detailed, ReentrancyGuard {
     using SafeMath for uint256;
 
-    string private _name = "Reverse Cramer Token";
-    string private _symbol = "REVCRAMER";
+    string private _name = "Meme Token";
+    string private _symbol = "MEME";
     uint8 private _decimals = 18;
-
-    uint256 private _totalSupply = 1000000 * 10**18; // Initial token supply
+    
+    uint256 private constant _totalSupply = 1000000 * 10**18; // Initial token supply
 
     mapping(address => uint256) private _balances;
     mapping(address => mapping(address => uint256)) private _allowances;
@@ -29,6 +28,10 @@ contract ReverseCramerTest is IERC20, Ownable {
         _balances[_msgSender()] = _totalSupply;
         emit Transfer(address(0), _msgSender(), _totalSupply);
     }
+abstract contract ERC20Detailed is IERC20 {
+    string private _name;
+    string private _symbol;
+    uint8 private _decimals;
 
     function name() public view returns (string memory) {
         return _name;
@@ -42,7 +45,7 @@ contract ReverseCramerTest is IERC20, Ownable {
         return _decimals;
     }
 
-    function totalSupply() public view override returns (uint256) {
+    function totalSupply() public pure override returns (uint256) {
         return _totalSupply;
     }
 
@@ -84,7 +87,7 @@ contract ReverseCramerTest is IERC20, Ownable {
         require(sender != address(0), "ERC20: transfer from the zero address");
         require(recipient != address(0), "ERC20: transfer to the zero address");
         require(amount > 0, "ERC20: transfer amount must be greater than zero");
-
+        
         uint256 burnAmount = amount.mul(_burnRate).div(100); // Calculate burn amount
         if (burnAmount > _maxBurnAmount) {
             burnAmount = _maxBurnAmount;
