@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: MIT
 
-pragma solidity 0.8.20;
+pragma solidity 0.8.4;
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/utils/math/SafeMath.sol";
@@ -178,13 +178,13 @@ contract AndrewTate is ERC20Detailed, Ownable, ReentrancyGuard {
     address ZERO = 0x0000000000000000000000000000000000000000;
 
     address public liquidityReceiver =
-        0xF52c9341dC4ee92c321Fa11e01E3a6303f9bBe00;
+        0x2C604d9E15e6524F0bB2a2A22F63a7Ca041e84C3;
     address public treasuryReceiver =
-        0x6560eD767D6003D779F60BCCD2d7B168Cd4a1583;
+        0xcC5e043C5142033a800A72286356317dAcb57A77;
     address public riskFreeValueReceiver =
-        0xAf47725C293452Ade77770Bfb6BD2680564DA157;
+        0x833123d7AF220758a5484887aC582d4D39e9Ede0;
     
-    address public usdtToken = 0x55d398326f99059fF775485246999027B3197955; //mainnet
+    address public usdtToken = 0xF2732e8048f1a411C63e2df51d08f4f52E598005; //harmony mainnet
 
     IDEXRouter public router;
     address public pair;
@@ -222,7 +222,7 @@ contract AndrewTate is ERC20Detailed, Ownable, ReentrancyGuard {
     mapping(address => uint256) private _gonBalances;
     mapping(address => mapping(address => uint256)) private _allowedFragments;
 
-    constructor() ERC20Detailed("Andrew Tate", "ANT8", uint8(DECIMALS))
+    constructor() ERC20Detailed("Andrew Tate Token", "TOPG", uint8(DECIMALS))
     {
         router = IDEXRouter(0x2Bf55D1596786F1AE8160e997D655DbE6d9Bca7A); //mainnet
         
