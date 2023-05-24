@@ -331,11 +331,11 @@
 			]
 		},
 		"AndrewTate.sol": {
-			"keccak256": "0x55aa38e0084d9a98c2e720c67352fdd6e3bcebe4ca42467ddb6e8e846c3e8de3",
+			"keccak256": "0x086c8010f7e3a6f8f6828e85787a07e5911fb2f1e5d79a7b9e6d1525375295b1",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://7935087aaaec706d23076bc6f96e8c74a8479a282139c43c5a1a6ed94f434228",
-				"dweb:/ipfs/QmUa1S9EgX5d3sRW1GjwvEo6dEamTYs2yBkharS2u9wpq8"
+				"bzz-raw://3014ab51b7481517160ba8cd10d70af8590fd86fc1576a86e62baf62a16ee1c0",
+				"dweb:/ipfs/QmcKsvC4aXNpwcEd7vfW42J5C2E6mViX6TNGiobGVqeFUf"
 			]
 		}
 	},

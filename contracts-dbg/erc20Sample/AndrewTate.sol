@@ -162,9 +162,9 @@ contract AndrewTate is ERC20Detailed, Ownable, ReentrancyGuard {
     address[] public _markerPairs;
     mapping(address => bool) public automatedMarketMakerPairs;
 
-    uint256 public constant MAX_FEE_RATE = 18;
-    uint256 public constant MAX_FEE_BUY = 13;
-    uint256 public constant MAX_FEE_SELL = 18;
+    uint256 public constant MAX_FEE_RATE = 5;
+    uint256 public constant MAX_FEE_BUY = 3;
+    uint256 public constant MAX_FEE_SELL = 5;
     uint256 private constant MAX_REBASE_FREQUENCY = 1800;
     uint256 private constant DECIMALS = 18;
     uint256 private constant MAX_UINT256 = ~uint256(0);
@@ -189,10 +189,10 @@ contract AndrewTate is ERC20Detailed, Ownable, ReentrancyGuard {
     IDEXRouter public router;
     address public pair;
 
-    uint256 public liquidityFee = 5;
-    uint256 public treasuryFee = 2;
-    uint256 public buyFeeRFV = 3;
-    uint256 public sellFeeTreasuryAdded = 5;
+    uint256 public liquidityFee = 1;
+    uint256 public treasuryFee = 1;
+    uint256 public buyFeeRFV = 1;
+    uint256 public sellFeeTreasuryAdded = 1;
     uint256 public totalBuyFee = liquidityFee.add(treasuryFee).add(buyFeeRFV);
     uint256 public totalSellFee =
         totalBuyFee.add(sellFeeTreasuryAdded);
@@ -224,7 +224,7 @@ contract AndrewTate is ERC20Detailed, Ownable, ReentrancyGuard {
 
     constructor() ERC20Detailed("Andrew Tate Token", "TOPG", uint8(DECIMALS))
     {
-        router = IDEXRouter(0x2Bf55D1596786F1AE8160e997D655DbE6d9Bca7A); //mainnet
+        router = IDEXRouter(0xcEEB22Faf32FF4EAd24565225503807e41E5FE87); //harmony mainnet
         
         pair = IDEXFactory(router.factory()).createPair(
             address(this),
