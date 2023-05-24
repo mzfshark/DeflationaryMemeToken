@@ -27,7 +27,7 @@
 		},
 		"optimizer": {
 			"enabled": true,
-			"runs": 200
+			"runs": 500
 		},
 		"remappings": []
 	},
@@ -89,11 +89,11 @@
 			]
 		},
 		"AndrewTate.sol": {
-			"keccak256": "0x086c8010f7e3a6f8f6828e85787a07e5911fb2f1e5d79a7b9e6d1525375295b1",
+			"keccak256": "0x002b19422e35bd966a415aa707aaa8dba498633bb87545eb02f3b69e1f9e14dc",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://3014ab51b7481517160ba8cd10d70af8590fd86fc1576a86e62baf62a16ee1c0",
-				"dweb:/ipfs/QmcKsvC4aXNpwcEd7vfW42J5C2E6mViX6TNGiobGVqeFUf"
+				"bzz-raw://2836fa4dbbaec031f27bd8ea674845d6912fdca6a409c78a5d14ebd63aecc422",
+				"dweb:/ipfs/Qmb7KPHcuCztAZPjLpqYzy2S5WQyfztBy6mBJKMHsFczU6"
 			]
 		}
 	},
