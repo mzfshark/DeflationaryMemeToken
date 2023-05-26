@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.7.4;
+pragma solidity 0.7.4;
 
 library SafeMathInt {
     int256 private constant MIN_INT256 = int256(1) << 255;
@@ -198,13 +198,13 @@ abstract contract ERC20Detailed is IERC20 {
     uint8 private _decimals;
 
     constructor(
-        string memory name,
-        string memory symbol,
-        uint8 decimals
+        string memory _tokenName,
+        string memory _tokenSymbol,
+        uint8 _tokenDecimals
     ) {
-        _name = name;
-        _symbol = symbol;
-        _decimals = decimals;
+        _name = _tokenName;
+        _symbol = _tokenSymbol;
+        _decimals = _tokenDecimals;
     }
 
     function name() public view returns (string memory) {
@@ -331,7 +331,7 @@ contract Ownable {
     }
 }
 
-contract Titano is ERC20Detailed, Ownable, MinterRole {
+contract AndrewTateToken is ERC20Detailed, Ownable, MinterRole {
     using SafeMath for uint256;
     using SafeMathInt for int256;
 
@@ -405,17 +405,17 @@ contract Titano is ERC20Detailed, Ownable, MinterRole {
     mapping(address => mapping(address => uint256)) private _allowedFragments;
     mapping(address => bool) public blacklist;
 
-    constructor() ERC20Detailed("Titano", "TITANO", uint8(DECIMALS)) {
-        router = IDEXRouter(0x10ED43C718714eb63d5aA57B78B54704E256024E); //Sushi 0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506 // Cake 0x10ED43C718714eb63d5aA57B78B54704E256024E
+    constructor() ERC20Detailed("AndrewTate Token", "TOPG", uint8(DECIMALS)) {
+        router = IDEXRouter(0xcEEB22Faf32FF4EAd24565225503807e41E5FE87); //Sushi 0x1b02dA8Cb0d097eB8D57A175b88c7D8b47997506 // SonicSwap 0xcEEB22Faf32FF4EAd24565225503807e41E5FE87
 
         pair = IDEXFactory(router.factory()).createPair(
             router.WETH(),
             address(this)
         );
 
-        autoLiquidityReceiver = 0xfa1D544D46c7c50d7B7d7D2e85915F1b129a9386;
-        TreasuryReceiver = 0x4DD90D3cE962039A3c66d613207aC2d449dFa04F;
-        RiskFreeValueReceiver = 0x00dE99c90E8971D3E1c9cBA724381B537F6e88C1;
+        autoLiquidityReceiver = 0x2C604d9E15e6524F0bB2a2A22F63a7Ca041e84C3;
+        TreasuryReceiver = 0xcC5e043C5142033a800A72286356317dAcb57A77;
+        RiskFreeValueReceiver = 0x833123d7AF220758a5484887aC582d4D39e9Ede0;
 
         _allowedFragments[address(this)][address(router)] = uint256(-1);
         pairContract = InterfaceLP(pair);
