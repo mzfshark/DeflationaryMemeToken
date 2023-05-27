@@ -24,9 +24,9 @@ contract MemeToken is IERC20, Ownable, ERC20, ReentrancyGuard {
     address constant DEAD = 0x000000000000000000000000000000000000dEaD;
     address constant ZERO = 0x0000000000000000000000000000000000000000;
 
-    address public liquidityWallet = 0x2C604d9E15e6524F0bB2a2A22F63a7Ca041e84C3;
-    address public treasuryWallet = 0xcC5e043C5142033a800A72286356317dAcb57A77;
-    address public rewardsWallet = 0x833123d7AF220758a5484887aC582d4D39e9Ede0;
+    address public liquidityWallet = 0x2C604d9E15e6524F0bB2a2A22F63a7Ca041e84C3; //harmony mainnet multisig
+    address public treasuryWallet = 0xcC5e043C5142033a800A72286356317dAcb57A77; //harmony mainnet multisig
+    address public rewardsWallet = 0x833123d7AF220758a5484887aC582d4D39e9Ede0; //harmony mainnet multisig
     
     // Fee configuration
     uint256 private feeDecimals = 18;
