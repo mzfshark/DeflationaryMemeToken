@@ -539,7 +539,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"memetokenTestnet.sol": "MemeTokenTest"
+			"memetokenTestnet.sol": "MemeT"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -594,11 +594,11 @@
 			]
 		},
 		"memetokenTestnet.sol": {
-			"keccak256": "0x8c19e8f42a28a41fd5886b9afcd0afe725fcc288c871112b3a875c742930fc0d",
+			"keccak256": "0xdf0729c8beee3ab486c74fc96d0534915c5b8b8ea0c6b944fd23f04728a785d2",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e6fafbce65761e4b1922a40d4f751695b4ff03a60cd279903036ee19f749cb98",
-				"dweb:/ipfs/Qme2J5sqsdy7rJBBA57j22qcjiHevQHaFz29E4v2aFWNhH"
+				"bzz-raw://efa12aecf33cd384dd03c1786cb9dc0a2fbc238d7ba97fc819998e3c027cf509",
+				"dweb:/ipfs/QmVeKo31195Q6mihJ7cPzNVzM47z57cEHt8aSYe8ty5TBe"
 			]
 		}
 	},

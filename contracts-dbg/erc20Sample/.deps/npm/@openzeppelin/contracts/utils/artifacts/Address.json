@@ -1,0 +1,73 @@
+{
+	"deploy": {
+		"VM:-": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"main:1": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"ropsten:3": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"rinkeby:4": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"kovan:42": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"goerli:5": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		},
+		"Custom": {
+			"linkReferences": {},
+			"autoDeployLib": true
+		}
+	},
+	"data": {
+		"bytecode": {
+			"generatedSources": [],
+			"linkReferences": {},
+			"object": "60566037600b82828239805160001a607314602a57634e487b7160e01b600052600060045260246000fd5b30600052607381538281f3fe73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122073b915ac34926af84b7109aae4b9dbf1ec1cf7494698e1b5b566ce9aeda5b64b64736f6c63430008020033",
+			"opcodes": "PUSH1 0x56 PUSH1 0x37 PUSH1 0xB DUP3 DUP3 DUP3 CODECOPY DUP1 MLOAD PUSH1 0x0 BYTE PUSH1 0x73 EQ PUSH1 0x2A JUMPI PUSH4 0x4E487B71 PUSH1 0xE0 SHL PUSH1 0x0 MSTORE PUSH1 0x0 PUSH1 0x4 MSTORE PUSH1 0x24 PUSH1 0x0 REVERT JUMPDEST ADDRESS PUSH1 0x0 MSTORE PUSH1 0x73 DUP2 MSTORE8 DUP3 DUP2 RETURN INVALID PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH20 0xB915AC34926AF84B7109AAE4B9DBF1EC1CF74946 SWAP9 0xE1 0xB5 0xB5 PUSH7 0xCE9AEDA5B64B64 PUSH20 0x6F6C634300080200330000000000000000000000 ",
+			"sourceMap": "194:9169:0:-:0;;;;;;;;;;;;;;;-1:-1:-1;;;194:9169:0;;;;;;;;;;;;;;;;;"
+		},
+		"deployedBytecode": {
+			"generatedSources": [],
+			"immutableReferences": {},
+			"linkReferences": {},
+			"object": "73000000000000000000000000000000000000000030146080604052600080fdfea264697066735822122073b915ac34926af84b7109aae4b9dbf1ec1cf7494698e1b5b566ce9aeda5b64b64736f6c63430008020033",
+			"opcodes": "PUSH20 0x0 ADDRESS EQ PUSH1 0x80 PUSH1 0x40 MSTORE PUSH1 0x0 DUP1 REVERT INVALID LOG2 PUSH5 0x6970667358 0x22 SLT KECCAK256 PUSH20 0xB915AC34926AF84B7109AAE4B9DBF1EC1CF74946 SWAP9 0xE1 0xB5 0xB5 PUSH7 0xCE9AEDA5B64B64 PUSH20 0x6F6C634300080200330000000000000000000000 ",
+			"sourceMap": "194:9169:0:-:0;;;;;;;;"
+		},
+		"gasEstimates": {
+			"creation": {
+				"codeDepositCost": "17200",
+				"executionCost": "103",
+				"totalCost": "17303"
+			},
+			"internal": {
+				"_revert(bytes memory,string memory)": "infinite",
+				"functionCall(address,bytes memory)": "infinite",
+				"functionCall(address,bytes memory,string memory)": "infinite",
+				"functionCallWithValue(address,bytes memory,uint256)": "infinite",
+				"functionCallWithValue(address,bytes memory,uint256,string memory)": "infinite",
+				"functionDelegateCall(address,bytes memory)": "infinite",
+				"functionDelegateCall(address,bytes memory,string memory)": "infinite",
+				"functionStaticCall(address,bytes memory)": "infinite",
+				"functionStaticCall(address,bytes memory,string memory)": "infinite",
+				"isContract(address)": "infinite",
+				"sendValue(address payable,uint256)": "infinite",
+				"verifyCallResult(bool,bytes memory,string memory)": "infinite",
+				"verifyCallResultFromTarget(address,bool,bytes memory,string memory)": "infinite"
+			}
+		},
+		"methodIdentifiers": {}
+	},
+	"abi": []
+}

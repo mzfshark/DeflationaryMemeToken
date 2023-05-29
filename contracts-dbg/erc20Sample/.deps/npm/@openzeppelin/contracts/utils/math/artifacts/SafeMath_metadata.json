@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.4+commit.c7e474f2"
+		"version": "0.8.1+commit.df193b15"
 	},
 	"language": "Solidity",
 	"output": {
@@ -28,17 +28,17 @@
 		},
 		"optimizer": {
 			"enabled": true,
-			"runs": 500
+			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
 		".deps/npm/@openzeppelin/contracts/utils/math/SafeMath.sol": {
-			"keccak256": "0x0f633a0223d9a1dcccfcf38a64c9de0874dfcbfac0c6941ccf074d63a2ce0e1e",
+			"keccak256": "0x58b21219689909c4f8339af00813760337f7e2e7f169a97fe49e2896dcfb3b9a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://864a40efcffdf408044c332a5aa38ec5618ed7b4eecb8f65faf45671bd6cdc65",
-				"dweb:/ipfs/QmQJquTMtc6fgm5JQzGdsGpA2fqBe3MHWEdt2qzaLySMdN"
+				"bzz-raw://ef8e012e946dec20e59f2d4446f4b44bb098f3fa8bac103b1b5112fff777447b",
+				"dweb:/ipfs/QmVTooKWcLkJ9W68yNX4MgdrbAKiAXwuRN9A7f4NkdcdtQ"
 			]
 		}
 	},

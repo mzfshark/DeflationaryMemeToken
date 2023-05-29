@@ -1,11 +1,12 @@
 {
 	"compiler": {
-		"version": "0.7.4+commit.3f05b770"
+		"version": "0.8.2+commit.661d1103"
 	},
 	"language": "Solidity",
 	"output": {
 		"abi": [],
 		"devdoc": {
+			"details": "Collection of functions related to the address type",
 			"kind": "dev",
 			"methods": {},
 			"version": 1
@@ -18,7 +19,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"AndrewTate-testnet.sol.sol": "SafeMath"
+			".deps/npm/@openzeppelin/contracts/utils/Address.sol": "Address"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -26,18 +27,18 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"AndrewTate-testnet.sol.sol": {
-			"keccak256": "0x001c21c0a1afc51a8ef4816412db3c789b6f74a7a1a626c8f281b67652b5a656",
+		".deps/npm/@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x006dd67219697fe68d7fbfdea512e7c4cb64a43565ed86171d67e844982da6fa",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a1b15a71551bcd77ba0dceeb9c92caea3f6a8af34b670ad5334b1b3ac6e7f7a0",
-				"dweb:/ipfs/QmUAWeemcsWpVBJSCxZSi4HhfkNKbj3sssaBinRH8jy1Ld"
+				"bzz-raw://2455248c8ddd9cc6a7af76a13973cddf222072427e7b0e2a7d1aff345145e931",
+				"dweb:/ipfs/QmfYjnjRbWqYpuxurqveE6HtzsY1Xx323J428AKQgtBJZm"
 			]
 		}
 	},

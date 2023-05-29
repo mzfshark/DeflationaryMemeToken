@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.2+commit.661d1103"
+		"version": "0.8.1+commit.df193b15"
 	},
 	"language": "Solidity",
 	"output": {
@@ -282,35 +282,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "sender",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "recipient",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "amount",
-						"type": "uint256"
-					}
-				],
-				"name": "transferFrom",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "treasuryFee",
 				"outputs": [
@@ -339,20 +310,7 @@
 		],
 		"devdoc": {
 			"kind": "dev",
-			"methods": {
-				"allowance(address,address)": {
-					"details": "Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called."
-				},
-				"approve(address,uint256)": {
-					"details": "Sets `amount` as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event."
-				},
-				"balanceOf(address)": {
-					"details": "Returns the amount of tokens owned by `account`."
-				},
-				"totalSupply()": {
-					"details": "Returns the amount of tokens in existence."
-				}
-			},
+			"methods": {},
 			"version": 1
 		},
 		"userdoc": {
@@ -363,7 +321,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/memetoken.sol": "DeflationaryToken"
+			"memetokenTestnet.sol": "DeflationaryToken"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -377,14 +335,6 @@
 		"remappings": []
 	},
 	"sources": {
-		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
-			"keccak256": "0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5",
-				"dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53"
-			]
-		},
 		"@openzeppelin/contracts/utils/Address.sol": {
 			"keccak256": "0x006dd67219697fe68d7fbfdea512e7c4cb64a43565ed86171d67e844982da6fa",
 			"license": "MIT",
@@ -401,12 +351,12 @@
 				"dweb:/ipfs/QmVTooKWcLkJ9W68yNX4MgdrbAKiAXwuRN9A7f4NkdcdtQ"
 			]
 		},
-		"contracts/memetoken.sol": {
-			"keccak256": "0x7bfa7d4d1c4823a1a99468bdc938598a6f6ab14368d80c22b5c2f4fc2e60664c",
+		"memetokenTestnet.sol": {
+			"keccak256": "0x454a49d9e84d9fcb69320927143c9ed56a49906825493eaef1047af1f69ea0b3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://bc95c159adf0d3463a6c3f7c810aaa1965a0ab41980b6a5d7a8cac241ad1d0be",
-				"dweb:/ipfs/QmNhfA8SCyjGQaeUHGXLa5zdEF8nJQMLhKpZMdqvVZaNrX"
+				"bzz-raw://b2f8888e4dc996ef4e1f5e419bbc6af61893f673ea9d2b9196dd1116510abd62",
+				"dweb:/ipfs/QmTTzjpB78Ff28qnixABBdDsYTYKrxtf1EDFp1trDJ3FvJ"
 			]
 		}
 	},

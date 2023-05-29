@@ -6,18 +6,7 @@
 	"output": {
 		"abi": [
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "_liquidityWallet",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "_treasuryWallet",
-						"type": "address"
-					}
-				],
+				"inputs": [],
 				"stateMutability": "nonpayable",
 				"type": "constructor"
 			},
@@ -52,25 +41,6 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "previousOwner",
-						"type": "address"
-					},
-					{
-						"indexed": true,
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "OwnershipTransferred",
-				"type": "event"
-			},
-			{
-				"anonymous": false,
-				"inputs": [
-					{
-						"indexed": true,
-						"internalType": "address",
 						"name": "from",
 						"type": "address"
 					},
@@ -89,6 +59,19 @@
 				],
 				"name": "Transfer",
 				"type": "event"
+			},
+			{
+				"inputs": [],
+				"name": "BURN_RATE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
 			},
 			{
 				"inputs": [],
@@ -111,6 +94,71 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "LIQUIDITY_FEE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "LIQUIDITY_WALLET",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "SELL_FEE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "TREASURY_FEE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "TREASURY_WALLET",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -197,16 +245,34 @@
 				"type": "function"
 			},
 			{
-				"inputs": [],
-				"name": "burnRate",
-				"outputs": [
+				"inputs": [
 					{
 						"internalType": "uint256",
-						"name": "",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
-				"stateMutability": "view",
+				"name": "burn",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "account",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "amount",
+						"type": "uint256"
+					}
+				],
+				"name": "burnFrom",
+				"outputs": [],
+				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -272,32 +338,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "liquidityFee",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "liquidityWallet",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "name",
 				"outputs": [
 					{
@@ -307,67 +347,6 @@
 					}
 				],
 				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "owner",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "renounceOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "sellFee",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_liquidityFee",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_treasuryFee",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_sellFee",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_burnRate",
-						"type": "uint256"
-					}
-				],
-				"name": "setFees",
-				"outputs": [],
-				"stateMutability": "nonpayable",
 				"type": "function"
 			},
 			{
@@ -448,45 +427,6 @@
 				],
 				"stateMutability": "nonpayable",
 				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "transferOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "treasuryFee",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "treasuryWallet",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -501,6 +441,12 @@
 				"balanceOf(address)": {
 					"details": "See {IERC20-balanceOf}."
 				},
+				"burn(uint256)": {
+					"details": "Destroys `amount` tokens from the caller. See {ERC20-_burn}."
+				},
+				"burnFrom(address,uint256)": {
+					"details": "Destroys `amount` tokens from `account`, deducting from the caller's allowance. See {ERC20-_burn} and {ERC20-allowance}. Requirements: - the caller must have allowance for ``accounts``'s tokens of at least `amount`."
+				},
 				"decimals()": {
 					"details": "Returns the number of decimals used to get its user representation. For example, if `decimals` equals `2`, a balance of `505` tokens should be displayed to a user as `5.05` (`505 / 10 ** 2`). Tokens usually opt for a value of 18, imitating the relationship between Ether and Wei. This is the default value returned by this function, unless it's overridden. NOTE: This information is only used for _display_ purposes: it in no way affects any of the arithmetic of the contract, including {IERC20-balanceOf} and {IERC20-transfer}."
 				},
@@ -513,20 +459,11 @@
 				"name()": {
 					"details": "Returns the name of the token."
 				},
-				"owner()": {
-					"details": "Returns the address of the current owner."
-				},
-				"renounceOwnership()": {
-					"details": "Leaves the contract without owner. It will not be possible to call `onlyOwner` functions. Can only be called by the current owner. NOTE: Renouncing ownership will leave the contract without an owner, thereby disabling any functionality that is only available to the owner."
-				},
 				"symbol()": {
 					"details": "Returns the symbol of the token, usually a shorter version of the name."
 				},
 				"totalSupply()": {
 					"details": "See {IERC20-totalSupply}."
-				},
-				"transferOwnership(address)": {
-					"details": "Transfers ownership of the contract to a new account (`newOwner`). Can only be called by the current owner."
 				}
 			},
 			"version": 1
@@ -539,7 +476,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"memetokenTestnet.sol": "MemeTokenTest"
+			"memetokenTestnet.sol": "MemeTo"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -553,14 +490,6 @@
 		"remappings": []
 	},
 	"sources": {
-		"@openzeppelin/contracts/access/Ownable.sol": {
-			"keccak256": "0xba43b97fba0d32eb4254f6a5a297b39a19a247082a02d6e69349e071e2946218",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://fc980984badf3984b6303b377711220e067722bbd6a135b24669ff5069ef9f32",
-				"dweb:/ipfs/QmPHXMSXj99XjSVM21YsY6aNtLLjLVXDbyN76J5HQYvvrz"
-			]
-		},
 		"@openzeppelin/contracts/token/ERC20/ERC20.sol": {
 			"keccak256": "0xa56ca923f70c1748830700250b19c61b70db9a683516dc5e216694a50445d99c",
 			"license": "MIT",
@@ -575,6 +504,14 @@
 			"urls": [
 				"bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5",
 				"dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol": {
+			"keccak256": "0x0d19410453cda55960a818e02bd7c18952a5c8fe7a3036e81f0d599f34487a7b",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://4c0f62d3d5bef22b5ca00cc3903e7de6152cb68d2d22401a463f373cda54c00f",
+				"dweb:/ipfs/QmSfzjZux7LC7NW2f7rjCXTHeFMUCWERqDkhpCTBy7kxTe"
 			]
 		},
 		"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
@@ -594,11 +531,11 @@
 			]
 		},
 		"memetokenTestnet.sol": {
-			"keccak256": "0x8c19e8f42a28a41fd5886b9afcd0afe725fcc288c871112b3a875c742930fc0d",
+			"keccak256": "0x2c9b4ba547d3b53671ee906790a5da710fff564bacc4c8a498ad345b6776a5cd",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e6fafbce65761e4b1922a40d4f751695b4ff03a60cd279903036ee19f749cb98",
-				"dweb:/ipfs/Qme2J5sqsdy7rJBBA57j22qcjiHevQHaFz29E4v2aFWNhH"
+				"bzz-raw://c0e9f80ac55af78013d4c6d21a9ca5bf5ffa04cc67b9e9f511c52cc9e5077ad7",
+				"dweb:/ipfs/QmaRgs2dU9YFqvKQ9DzcbzDvfiHKKrEYY6CLn6nq2XjyYt"
 			]
 		}
 	},

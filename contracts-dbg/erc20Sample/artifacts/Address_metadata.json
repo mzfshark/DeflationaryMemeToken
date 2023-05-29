@@ -1,0 +1,62 @@
+{
+	"compiler": {
+		"version": "0.8.2+commit.661d1103"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"details": "Collection of functions related to the address type",
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"memetokenTestnet.sol": "Address"
+		},
+		"evmVersion": "istanbul",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": true,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0x287b55befed2961a7eabd7d7b1b2839cbca8a5b80ef8dcbb25ed3d4c2002c305",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://bd39944e8fc06be6dbe2dd1d8449b5336e23c6a7ba3e8e9ae5ae0f37f35283f5",
+				"dweb:/ipfs/QmPV3FGYjVwvKSgAXKUN3r9T9GwniZz83CxBpM7vyj2G53"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/SafeMath.sol": {
+			"keccak256": "0x58b21219689909c4f8339af00813760337f7e2e7f169a97fe49e2896dcfb3b9a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ef8e012e946dec20e59f2d4446f4b44bb098f3fa8bac103b1b5112fff777447b",
+				"dweb:/ipfs/QmVTooKWcLkJ9W68yNX4MgdrbAKiAXwuRN9A7f4NkdcdtQ"
+			]
+		},
+		"memetokenTestnet.sol": {
+			"keccak256": "0x3724f7d507d6f9079f6084ce1415d9ef58a88a4c2fe17e1fb2208266de07ac60",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://0c1d4d0da787f257f169cd0684eb7bffb53ad2bce8e5f995bd41f6576cb4d30a",
+				"dweb:/ipfs/QmcbBc2nGNFu2a4VcudgHbK61RRdHFvT7rhqMfKB3e7QqT"
+			]
+		}
+	},
+	"version": 1
+}

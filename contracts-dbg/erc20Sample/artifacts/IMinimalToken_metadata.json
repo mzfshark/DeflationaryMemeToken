@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.7.4+commit.3f05b770"
+		"version": "0.8.1+commit.df193b15"
 	},
 	"language": "Solidity",
 	"output": {
@@ -88,7 +88,7 @@
 					},
 					{
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
@@ -107,7 +107,7 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "who",
+						"name": "account",
 						"type": "address"
 					}
 				],
@@ -139,45 +139,16 @@
 				"inputs": [
 					{
 						"internalType": "address",
-						"name": "to",
+						"name": "recipient",
 						"type": "address"
 					},
 					{
 						"internalType": "uint256",
-						"name": "value",
+						"name": "amount",
 						"type": "uint256"
 					}
 				],
 				"name": "transfer",
-				"outputs": [
-					{
-						"internalType": "bool",
-						"name": "",
-						"type": "bool"
-					}
-				],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "from",
-						"type": "address"
-					},
-					{
-						"internalType": "address",
-						"name": "to",
-						"type": "address"
-					},
-					{
-						"internalType": "uint256",
-						"name": "value",
-						"type": "uint256"
-					}
-				],
-				"name": "transferFrom",
 				"outputs": [
 					{
 						"internalType": "bool",
@@ -202,7 +173,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"AndrewTate-testnet.sol.sol": "IERC20"
+			"memetokenTestnet.sol": "IMinimalToken"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -210,18 +181,34 @@
 			"bytecodeHash": "ipfs"
 		},
 		"optimizer": {
-			"enabled": false,
+			"enabled": true,
 			"runs": 200
 		},
 		"remappings": []
 	},
 	"sources": {
-		"AndrewTate-testnet.sol.sol": {
-			"keccak256": "0x001c21c0a1afc51a8ef4816412db3c789b6f74a7a1a626c8f281b67652b5a656",
+		"@openzeppelin/contracts/utils/Address.sol": {
+			"keccak256": "0x006dd67219697fe68d7fbfdea512e7c4cb64a43565ed86171d67e844982da6fa",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://a1b15a71551bcd77ba0dceeb9c92caea3f6a8af34b670ad5334b1b3ac6e7f7a0",
-				"dweb:/ipfs/QmUAWeemcsWpVBJSCxZSi4HhfkNKbj3sssaBinRH8jy1Ld"
+				"bzz-raw://2455248c8ddd9cc6a7af76a13973cddf222072427e7b0e2a7d1aff345145e931",
+				"dweb:/ipfs/QmfYjnjRbWqYpuxurqveE6HtzsY1Xx323J428AKQgtBJZm"
+			]
+		},
+		"@openzeppelin/contracts/utils/math/SafeMath.sol": {
+			"keccak256": "0x58b21219689909c4f8339af00813760337f7e2e7f169a97fe49e2896dcfb3b9a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://ef8e012e946dec20e59f2d4446f4b44bb098f3fa8bac103b1b5112fff777447b",
+				"dweb:/ipfs/QmVTooKWcLkJ9W68yNX4MgdrbAKiAXwuRN9A7f4NkdcdtQ"
+			]
+		},
+		"memetokenTestnet.sol": {
+			"keccak256": "0x454a49d9e84d9fcb69320927143c9ed56a49906825493eaef1047af1f69ea0b3",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://b2f8888e4dc996ef4e1f5e419bbc6af61893f673ea9d2b9196dd1116510abd62",
+				"dweb:/ipfs/QmTTzjpB78Ff28qnixABBdDsYTYKrxtf1EDFp1trDJ3FvJ"
 			]
 		}
 	},
