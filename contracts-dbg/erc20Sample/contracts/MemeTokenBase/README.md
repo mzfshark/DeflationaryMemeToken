@@ -4,7 +4,7 @@ This Solidity contract represents a customized ERC20 token with deflationary and
 It inherits from the OpenZeppelin library's ERC20 and Ownable contracts.
 
 
-## Here's a breakdown of the key parts of this contract:
+### Here's a breakdown of the key parts of this contract:
 
 `Address Variables`: The contract has addresses for a liquidity wallet, a treasury wallet, and two burn addresses.
 
