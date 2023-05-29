@@ -1,8 +1,12 @@
-This Solidity contract represents a customized ERC20 token with deflationary and fee transfer characteristics. It inherits from the OpenZeppelin library's ERC20 and Ownable contracts.
+# Meme Token Deflationary Project
 
-Here's a breakdown of the key parts of this contract:
+This Solidity contract represents a customized ERC20 token with deflationary and fee transfer characteristics. 
+It inherits from the OpenZeppelin library's ERC20 and Ownable contracts.
 
-Address Variables: The contract has addresses for a liquidity wallet, a treasury wallet, and two burn addresses.
+
+##Here's a breakdown of the key parts of this contract:
+
+<Address Variables:> The contract has addresses for a liquidity wallet, a treasury wallet, and two burn addresses.
 
 Supply: The initial supply is set to 1 billion tokens, which aligns with the standard 18 decimal places of ERC20 tokens. The supply is minted to the liquidity wallet at the time of deployment.
 
