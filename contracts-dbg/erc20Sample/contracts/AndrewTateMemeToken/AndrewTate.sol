@@ -4,7 +4,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MemeTokenTest is ERC20, Ownable {
+contract AndrewTateToken is ERC20, Ownable {
     address public liquidityWallet;
     address public treasuryWallet;
     
@@ -18,7 +18,7 @@ contract MemeTokenTest is ERC20, Ownable {
     uint256 public sellFee = 5; // 0.05%
     uint256 public burnRate = 20; // 0.20%
 
-    constructor(address _liquidityWallet, address _treasuryWallet) ERC20("[TEST] Deflationary Meme Token]", "DMT02") {
+    constructor(address _liquidityWallet, address _treasuryWallet) ERC20("Andrew Tate Token", "TOPG") {
         liquidityWallet = _liquidityWallet;
         treasuryWallet = _treasuryWallet;
         _mint(liquidityWallet, INITIAL_SUPPLY);
