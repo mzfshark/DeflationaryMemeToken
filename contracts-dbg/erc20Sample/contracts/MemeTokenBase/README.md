@@ -12,12 +12,12 @@ It inherits from the OpenZeppelin library's ERC20 and Ownable contracts.
 
 `Fees and Burn Rate`': The contract sets a liquidity fee, a treasury fee, a selling fee, and a burn rate. These values are represented per 10,000 (i.e., 25 means 0.25%, 50 means 0.5%, and so on).
 
-'''sh
+```sh    
     uint256 public liquidityFee = 25; // 0.25%
     uint256 public treasuryFee = 50; // 0.5%
     uint256 public sellFee = 5; // 0.05%
     uint256 public burnRate = 20; // 0.20%
-'''
+```
 
 `Constructor`: During the deployment of the contract, the liquidity and treasury wallets' addresses are initialized using the parameters of the constructor function. It also mints the initial supply to the liquidity wallet.
 
