@@ -10,7 +10,7 @@ It inherits from the OpenZeppelin library's ERC20 and Ownable contracts.
 
 `Supply`: The initial supply is set to 1 billion tokens, which aligns with the standard 18 decimal places of ERC20 tokens. The supply is minted to the liquidity wallet at the time of deployment.
 
-`Fees and Burn Rate`': The contract sets a liquidity fee, a treasury fee, a selling fee, and a burn rate. These values are represented per 10,000 (i.e., 25 means 0.25%, 50 means 0.5%, and so on).
+`Fees and Burn Rate`': The contract sets a liquidity fee, a treasury fee, a selling fee, and a burn rate. These values are represents 1% for each transaction. 0.8% its fee distributed to Treasury (0.5%) and Liquidity Wallets(0.3%) and 0.2% is only for deflationary mechanism (Burned automaticaly). 
 
 ```sh    
     uint256 public liquidityFee = 25; // 0.25%
