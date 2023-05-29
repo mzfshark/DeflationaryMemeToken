@@ -55,6 +55,6 @@ function applyFees(address sender, address recipient, uint256 amount) internal r
     }
 ```
 
-`setFees Function`: This function allows the contract owner to change the fee rates and the burn rate. This function is only executable by the owner of the contract due to the onlyOwner modifier.
+`setFees Function`: This function allows the contract owner to change the fee rates and the burn rate. This function is only executable by the owner of the contract due to the onlyOwner modifier. This will seted to turn more easy for futures adjustments on tokenomics and its higly recomended to be voted by community / developers before change it.  
 
 Please note that while this code could be a good start for a deflationary token, it's important to conduct thorough testing, auditing, and potentially add more functionalities depending on your needs before using it in a production environment.
