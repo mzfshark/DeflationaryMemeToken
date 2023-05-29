@@ -25,6 +25,36 @@ It inherits from the OpenZeppelin library's ERC20 and Ownable contracts.
 
 `ApplyFees Function`: This function applies the fees and the burn rate. It checks if the transaction is being made to or from one of the special addresses (burn addresses, the liquidity wallet, or the treasury wallet). It calculates the amounts for each fee and the burn based on the transaction amount. The fee amounts are transferred to the appropriate wallets, the burn amount is destroyed from the sender's balance, and the remaining amount is returned.
 
+```sh
+function applyFees(address sender, address recipient, uint256 amount) internal returns (uint256) {
+        if (recipient == DEAD || recipient == ZERO || sender == liquidityWallet || sender == treasuryWallet) {
+            return amount;
+        }
+
+        uint256 liquidityFeeAmount = amount * liquidityFee / 10000;
+        uint256 treasuryFeeAmount = amount * treasuryFee / 10000;
+        uint256 burnAmount = amount * burnRate / 10000;
+
+        if (recipient != liquidityWallet) {
+            super.transfer(liquidityWallet, liquidityFeeAmount);
+        }
+
+        if (recipient != treasuryWallet) {
+            super.transfer(treasuryWallet, treasuryFeeAmount);
+        }
+
+        _burn(sender, burnAmount);
+
+        uint256 sellFeeAmount = 0;
+        if (sender != liquidityWallet && sender != treasuryWallet) {
+            sellFeeAmount = amount * sellFee / 10000;
+            super.transfer(liquidityWallet, sellFeeAmount);
+        }
+
+        return amount - liquidityFeeAmount - treasuryFeeAmount - burnAmount - sellFeeAmount;
+    }
+```
+
 `setFees Function`: This function allows the contract owner to change the fee rates and the burn rate. This function is only executable by the owner of the contract due to the onlyOwner modifier.
 
 Please note that while this code could be a good start for a deflationary token, it's important to conduct thorough testing, auditing, and potentially add more functionalities depending on your needs before using it in a production environment.
