@@ -1,6 +1,6 @@
 {
 	"compiler": {
-		"version": "0.8.0+commit.c7dfd78e"
+		"version": "0.8.6+commit.11564f7e"
 	},
 	"language": "Solidity",
 	"output": {
@@ -92,6 +92,19 @@
 			},
 			{
 				"inputs": [],
+				"name": "BURN_RATE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "DEAD",
 				"outputs": [
 					{
@@ -105,7 +118,33 @@
 			},
 			{
 				"inputs": [],
-				"name": "INITIAL_SUPPLY",
+				"name": "LIQUIDITY_FEE",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "TOTAL_SUPPLY",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "TREASURY_FEE",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -198,19 +237,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "burnRate",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "decimals",
 				"outputs": [
 					{
@@ -272,19 +298,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "liquidityFee",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "liquidityWallet",
 				"outputs": [
 					{
@@ -325,47 +338,6 @@
 			{
 				"inputs": [],
 				"name": "renounceOwnership",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "sellFee",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
-						"internalType": "uint256",
-						"name": "_liquidityFee",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_treasuryFee",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_sellFee",
-						"type": "uint256"
-					},
-					{
-						"internalType": "uint256",
-						"name": "_burnRate",
-						"type": "uint256"
-					}
-				],
-				"name": "setFees",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -464,19 +436,6 @@
 			},
 			{
 				"inputs": [],
-				"name": "treasuryFee",
-				"outputs": [
-					{
-						"internalType": "uint256",
-						"name": "",
-						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
 				"name": "treasuryWallet",
 				"outputs": [
 					{
@@ -539,9 +498,9 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/MemeTokenBase/memetoken.sol": "MemeTokenTest"
+			"contracts/MemeTokenBase/memetoken.sol": "DeflationaryMemeToken"
 		},
-		"evmVersion": "istanbul",
+		"evmVersion": "berlin",
 		"libraries": {},
 		"metadata": {
 			"bytecodeHash": "ipfs"
@@ -594,11 +553,11 @@
 			]
 		},
 		"contracts/MemeTokenBase/memetoken.sol": {
-			"keccak256": "0x8c19e8f42a28a41fd5886b9afcd0afe725fcc288c871112b3a875c742930fc0d",
+			"keccak256": "0xbd30ebeec41c0543f6d4ddef89332d1816b1d96dfe0e9d8b8a523c24bcbd8777",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e6fafbce65761e4b1922a40d4f751695b4ff03a60cd279903036ee19f749cb98",
-				"dweb:/ipfs/Qme2J5sqsdy7rJBBA57j22qcjiHevQHaFz29E4v2aFWNhH"
+				"bzz-raw://1765c261cec06eebeeea2a99c4662b060cb84fdc96a92badc4feacc766f1cee1",
+				"dweb:/ipfs/QmRq7sKPsh1TA5NtP6LgdDyF2Zve5awQdf1SU1pAojFbWE"
 			]
 		}
 	},

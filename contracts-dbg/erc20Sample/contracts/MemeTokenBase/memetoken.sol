@@ -1,69 +1,49 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity 0.8.6;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
-contract MemeTokenTest is ERC20, Ownable {
-    address public liquidityWallet;
-    address public treasuryWallet;
-    
+contract DeflationaryMemeToken is ERC20, Ownable {
     address public constant DEAD = 0x000000000000000000000000000000000000dEaD;
     address public constant ZERO = 0x0000000000000000000000000000000000000000;
+    address public treasuryWallet;
+    address public liquidityWallet;
 
-    uint256 public constant INITIAL_SUPPLY = 1000000000 * (10 ** 18); // 1 billion tokens, 18 decimal places
+    uint256 public constant TREASURY_FEE = 50; //  0.5%
+    uint256 public constant LIQUIDITY_FEE = 25; //  0.25%
+    uint256 public constant BURN_RATE = 35; //  0.35%
+    uint256 public constant TOTAL_SUPPLY = 100000000 * (10 ** 18); // 100 million tokens, scaled by 18 decimal places
 
-    uint256 public liquidityFee = 25; // 0.25%
-    uint256 public treasuryFee = 50; // 0.5%
-    uint256 public sellFee = 5; // 0.05%
-    uint256 public burnRate = 20; // 0.20%
-
-    constructor(address _liquidityWallet, address _treasuryWallet) ERC20("[TEST] Deflationary Meme Token]", "DMT02") {
+    constructor(address _liquidityWallet, address _treasuryWallet) ERC20("[TEST] Deflationary Meme Token", "DMT09") {
         liquidityWallet = _liquidityWallet;
         treasuryWallet = _treasuryWallet;
-        _mint(liquidityWallet, INITIAL_SUPPLY);
+        _mint(liquidityWallet, TOTAL_SUPPLY);
     }
 
     function transfer(address recipient, uint256 amount) public override returns (bool) {
-        return super.transfer(recipient, applyFees(msg.sender, recipient, amount));
+        return _processTransaction(msg.sender, recipient, amount);
     }
 
     function transferFrom(address sender, address recipient, uint256 amount) public override returns (bool) {
-        return super.transferFrom(sender, recipient, applyFees(sender, recipient, amount));
+        uint256 currentAllowance = allowance(sender, _msgSender());
+        require(currentAllowance >= amount, "ERC20: transfer amount exceeds allowance");
+        _approve(sender, _msgSender(), currentAllowance - amount);
+        return _processTransaction(sender, recipient, amount);
     }
 
-    function applyFees(address sender, address recipient, uint256 amount) internal returns (uint256) {
-        if (recipient == DEAD || recipient == ZERO || sender == liquidityWallet || sender == treasuryWallet) {
-            return amount;
-        }
-
-        uint256 liquidityFeeAmount = amount * liquidityFee / 10000;
-        uint256 treasuryFeeAmount = amount * treasuryFee / 10000;
-        uint256 burnAmount = amount * burnRate / 10000;
-
-        if (recipient != liquidityWallet) {
-            super.transfer(liquidityWallet, liquidityFeeAmount);
-        }
-
-        if (recipient != treasuryWallet) {
-            super.transfer(treasuryWallet, treasuryFeeAmount);
-        }
+    function _processTransaction(address sender, address recipient, uint256 amount) private returns (bool) {
+        uint256 burnAmount = amount * BURN_RATE / 10000;
+        uint256 treasuryFee = amount * TREASURY_FEE / 10000;
+        uint256 liquidityFee = amount * LIQUIDITY_FEE / 10000;
+        uint256 transferAmount = amount - burnAmount - treasuryFee - liquidityFee;
 
         _burn(sender, burnAmount);
+        _transfer(sender, treasuryWallet, treasuryFee);
+        _transfer(sender, liquidityWallet, liquidityFee);
+        _transfer(sender, recipient, transferAmount);
 
-        uint256 sellFeeAmount = 0;
-        if (sender != liquidityWallet && sender != treasuryWallet) {
-            sellFeeAmount = amount * sellFee / 10000;
-            super.transfer(liquidityWallet, sellFeeAmount);
-        }
-
-        return amount - liquidityFeeAmount - treasuryFeeAmount - burnAmount - sellFeeAmount;
-    }
-
-    function setFees(uint256 _liquidityFee, uint256 _treasuryFee, uint256 _sellFee, uint256 _burnRate) external onlyOwner {
-        liquidityFee = _liquidityFee;
-        treasuryFee = _treasuryFee;
-        sellFee = _sellFee;
-        burnRate = _burnRate;
+        return true;
     }
 }
+

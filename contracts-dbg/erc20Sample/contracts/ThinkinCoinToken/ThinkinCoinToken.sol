@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity 0.8.0;
 
 import "@openzeppelin/contracts/token/ERC20/ERC20.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
@@ -11,29 +11,37 @@ contract ThinkinCoinToken is ERC20, Ownable {
     address public constant DEAD = 0x000000000000000000000000000000000000dEaD;
     address public constant ZERO = 0x0000000000000000000000000000000000000000;
 
-    uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** 18); // 1 billion tokens, 18 decimal places
+    uint256 public constant INITIAL_SUPPLY = 100000000 * (10 ** 18); // 100 million tokens, 18 decimal places
 
     uint256 public liquidityFee = 25; // 0.25%
     uint256 public treasuryFee = 50; // 0.5%
     uint256 public sellFee = 5; // 0.05%
     uint256 public burnRate = 20; // 0.20%
 
-    constructor(address _liquidityWallet, address _treasuryWallet) ERC20("ThinkinCoinToken", "COINT") {
+    bool private inTransaction = false; // variable to prevent recursive loop
+
+    modifier lockTheSwap {
+        inTransaction = true;
+        _;
+        inTransaction = false;
+    }
+
+    constructor(address _liquidityWallet, address _treasuryWallet) ERC20("[Think in Coin]", "NEURONS") {
         liquidityWallet = _liquidityWallet;
         treasuryWallet = _treasuryWallet;
         _mint(liquidityWallet, INITIAL_SUPPLY);
     }
 
-    function transfer(address recipient, uint256 amount) public override returns (bool) {
+    function transfer(address recipient, uint256 amount) public override lockTheSwap returns (bool) {
         return super.transfer(recipient, applyFees(msg.sender, recipient, amount));
     }
 
-    function transferFrom(address sender, address recipient, uint256 amount) public override returns (bool) {
+    function transferFrom(address sender, address recipient, uint256 amount) public override lockTheSwap returns (bool) {
         return super.transferFrom(sender, recipient, applyFees(sender, recipient, amount));
     }
 
     function applyFees(address sender, address recipient, uint256 amount) internal returns (uint256) {
-        if (recipient == DEAD || recipient == ZERO || sender == liquidityWallet || sender == treasuryWallet) {
+        if (recipient == DEAD || recipient == ZERO || sender == liquidityWallet || sender == treasuryWallet || inTransaction) {
             return amount;
         }
 

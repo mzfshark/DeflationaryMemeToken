@@ -539,7 +539,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/MemeTokenBase/memetoken.sol": "MemeTokenTest"
+			"contracts/MemeTokenBase/memetoken.sol": "ThinkinCoinToken"
 		},
 		"evmVersion": "istanbul",
 		"libraries": {},
@@ -594,11 +594,11 @@
 			]
 		},
 		"contracts/MemeTokenBase/memetoken.sol": {
-			"keccak256": "0x8c19e8f42a28a41fd5886b9afcd0afe725fcc288c871112b3a875c742930fc0d",
+			"keccak256": "0xb6ed53b16a4dc141d7200718ef9806e893a3f9de970ca0eb8f79279ad67a13aa",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://e6fafbce65761e4b1922a40d4f751695b4ff03a60cd279903036ee19f749cb98",
-				"dweb:/ipfs/Qme2J5sqsdy7rJBBA57j22qcjiHevQHaFz29E4v2aFWNhH"
+				"bzz-raw://e43cac478036c5f04e78957f287b19c431bd81061052ea33247e4899c131ddb9",
+				"dweb:/ipfs/QmTVhTV5tW1xjvPJ5NQsm1A638CabmwSR74JgLxraGc3TX"
 			]
 		}
 	},
