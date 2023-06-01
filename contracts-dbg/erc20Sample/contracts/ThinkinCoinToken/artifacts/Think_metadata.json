@@ -498,7 +498,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts/ThinkinCoinToken/ThinkinCoinToken.sol": "ThinkinCoinToken"
+			"contracts/ThinkinCoinToken/ThinkinCoinToken.sol": "Think"
 		},
 		"evmVersion": "berlin",
 		"libraries": {},
@@ -553,11 +553,11 @@
 			]
 		},
 		"contracts/ThinkinCoinToken/ThinkinCoinToken.sol": {
-			"keccak256": "0x587d3bedeb338babad5a4bc75248f99a8265c4810577165def0ddf7a0951832a",
+			"keccak256": "0x819ba68357ecd9afcdcb28f7615beeb6f39270e39bff2af06e3912968bcc6cf0",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c43aa50e529923b17eb95c9219e13077f9fb33da1c1a10e5c2f0e2706b37331a",
-				"dweb:/ipfs/QmSTGSnw9NXWdDoySCZXWZ8P6f6MD2hW8wsURu2NBj2ZVG"
+				"bzz-raw://ba70af45658a7f5bf89780b76e5bdc02ed4cbaf53bb32737d8a9c56957e9a372",
+				"dweb:/ipfs/QmenAmZGAZKnC1Ncrh5qXeG2TzhmGzfNmUWMHbGaqESA91"
 			]
 		}
 	},

@@ -15,7 +15,7 @@ contract DeflationaryMemeToken is ERC20, Ownable {
     uint256 public constant BURN_RATE = 35; //  0.35%
     uint256 public constant TOTAL_SUPPLY = 100000000 * (10 ** 18); // 100 million tokens, scaled by 18 decimal places
 
-    constructor(address _liquidityWallet, address _treasuryWallet) ERC20("[TEST] Deflationary Meme Token", "DMT09") {
+    constructor(address _liquidityWallet, address _treasuryWallet) ERC20("[TEST] Deflationary Meme Token", "DMT10") {
         liquidityWallet = _liquidityWallet;
         treasuryWallet = _treasuryWallet;
         _mint(liquidityWallet, TOTAL_SUPPLY);
@@ -33,14 +33,24 @@ contract DeflationaryMemeToken is ERC20, Ownable {
     }
 
     function _processTransaction(address sender, address recipient, uint256 amount) private returns (bool) {
-        uint256 burnAmount = amount * BURN_RATE / 10000;
-        uint256 treasuryFee = amount * TREASURY_FEE / 10000;
-        uint256 liquidityFee = amount * LIQUIDITY_FEE / 10000;
+        uint256 burnAmount = 0;
+        uint256 treasuryFee = 0;
+        uint256 liquidityFee = 0;
+
+        if (sender != treasuryWallet && sender != liquidityWallet) {
+            burnAmount = amount * BURN_RATE / 10000;
+            treasuryFee = amount * TREASURY_FEE / 10000;
+            liquidityFee = amount * LIQUIDITY_FEE / 10000;
+        }
+
         uint256 transferAmount = amount - burnAmount - treasuryFee - liquidityFee;
 
-        _burn(sender, burnAmount);
-        _transfer(sender, treasuryWallet, treasuryFee);
-        _transfer(sender, liquidityWallet, liquidityFee);
+        if (burnAmount > 0) {
+            _burn(sender, burnAmount);
+            _transfer(sender, treasuryWallet, treasuryFee);
+            _transfer(sender, liquidityWallet, liquidityFee);
+        }
+        
         _transfer(sender, recipient, transferAmount);
 
         return true;

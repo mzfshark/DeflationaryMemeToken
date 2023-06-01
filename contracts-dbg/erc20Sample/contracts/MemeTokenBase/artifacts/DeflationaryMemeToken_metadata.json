@@ -553,11 +553,11 @@
 			]
 		},
 		"contracts/MemeTokenBase/memetoken.sol": {
-			"keccak256": "0xbd30ebeec41c0543f6d4ddef89332d1816b1d96dfe0e9d8b8a523c24bcbd8777",
+			"keccak256": "0xbea6df2422f26f8e5bf70e3599f1aef902a4e40f96389eb8ab33dd4c8bdf6aaf",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://1765c261cec06eebeeea2a99c4662b060cb84fdc96a92badc4feacc766f1cee1",
-				"dweb:/ipfs/QmRq7sKPsh1TA5NtP6LgdDyF2Zve5awQdf1SU1pAojFbWE"
+				"bzz-raw://e6c92ebbbc106e4d6b57579d7e6083b5805b10a493ce825c40ca348d90632635",
+				"dweb:/ipfs/QmPupjLHajebXgEw1sVdbtjq1cRYr7sH7apiVScg29SA9Q"
 			]
 		}
 	},
