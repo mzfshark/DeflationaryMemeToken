@@ -56,4 +56,3 @@ contract ThinkinCoinToken is ERC20, Ownable {
         return true;
     }
 }
-

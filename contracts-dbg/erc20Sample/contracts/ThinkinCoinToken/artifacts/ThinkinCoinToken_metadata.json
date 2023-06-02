@@ -553,11 +553,11 @@
 			]
 		},
 		"contracts/ThinkinCoinToken/ThinkinCoinToken.sol": {
-			"keccak256": "0x587d3bedeb338babad5a4bc75248f99a8265c4810577165def0ddf7a0951832a",
+			"keccak256": "0x7f5bb2515e8b04cce485d2ee1252bf60487f94a6cfb860177a88a61c3faa820a",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://c43aa50e529923b17eb95c9219e13077f9fb33da1c1a10e5c2f0e2706b37331a",
-				"dweb:/ipfs/QmSTGSnw9NXWdDoySCZXWZ8P6f6MD2hW8wsURu2NBj2ZVG"
+				"bzz-raw://d6ff30aa6738387d7252e3acc93e283620a0f8965c3e5e11be2c08adf1d6bb26",
+				"dweb:/ipfs/QmRHJXEH2j5fiPp84FTLFKEukTh39TefBcSUVAghjaVNpP"
 			]
 		}
 	},
