@@ -498,7 +498,7 @@
 	},
 	"settings": {
 		"compilationTarget": {
-			"contracts-dbg/erc20Sample/contracts/ThinkinCoinToken/ThinkinCoinToken_flattened.sol": "ThinkinCoinToken"
+			"contracts-dbg/erc20Sample/contracts/ThinkinCoinToken/ThinkinCoinToken.sol": "ThinkinCoinToken"
 		},
 		"evmVersion": "berlin",
 		"libraries": {},
@@ -512,12 +512,52 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts-dbg/erc20Sample/contracts/ThinkinCoinToken/ThinkinCoinToken_flattened.sol": {
-			"keccak256": "0xd3a1ddfed8a77830b17bcd5e1f7633df6360a99dc10ab2eee5312c8dcac57fd3",
+		"@openzeppelin/contracts/access/Ownable.sol": {
+			"keccak256": "0xee2b6bc803215b66037612da0fe9f23ec3c99ff89db4ff05449a8df17c9befc5",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://8537d0836cfb061e17f7941ae4a8b33e63e4e18e191fdfc4c342b54f424bc8ae",
-				"dweb:/ipfs/QmQRpEgGK96GSqjXNcPfLecUhnnhFGKxu5ktaACVwTq52y"
+				"bzz-raw://127be279bb6b2f6106127ea6b431cfc879f9018dd76b7575841821be9eef3488",
+				"dweb:/ipfs/QmfXqvL6sKx256hrVuQcSnNtirZrpm4JUbDFXwGHKgrrXU"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+			"keccak256": "0x7138baa2520f7c1d6943ce6e53192d8eae5b50bf4b27dd602f8b27144987f70c",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c616140f2b008385f0bffd7915ce7ce45c1e2bba201318b89d44073e36514597",
+				"dweb:/ipfs/QmdsoxHZ326dnUKNYKahgNAj8wsJH111JrQsKHz6CkVBy7"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+			"keccak256": "0xdd286f7283325eb12ee50e41dac6be9665262e827b66f4f8952111ff77b6a130",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://567e5cfe5c64fb8c5f041393d42178447cf00880a2a2172a5a8e83131e1c24fa",
+				"dweb:/ipfs/QmY6KVSBk5xbtZuyhcQPNyJAATMZnmJ45TcBBAE7rzD5du"
+			]
+		},
+		"@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+			"keccak256": "0x0270cb4e50d6bcdd780df229606076d39df796860d266b5426f374c36f34fe89",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://511db944b3f0a57b56fda90d1e466cca6a0dea2297d816251966c8f025313973",
+				"dweb:/ipfs/QmRgu5uCaKkoRr3amWGfhy6bVwhpH5tr1vynaNQyEYiE4p"
+			]
+		},
+		"@openzeppelin/contracts/utils/Context.sol": {
+			"keccak256": "0x81d5fc973a522c8909d60be6a201869d46aa47b030b8813f60616404628c2b94",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://9755b505799e622d964a843a8ed1fd60fedffca230178e5cb95ae9280df4dcd2",
+				"dweb:/ipfs/QmRkhUYUUgRZ2QYJjmtQct2ubyYwS3bdUMhbuFYM12VfYn"
+			]
+		},
+		"contracts-dbg/erc20Sample/contracts/ThinkinCoinToken/ThinkinCoinToken.sol": {
+			"keccak256": "0x7f5bb2515e8b04cce485d2ee1252bf60487f94a6cfb860177a88a61c3faa820a",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://d6ff30aa6738387d7252e3acc93e283620a0f8965c3e5e11be2c08adf1d6bb26",
+				"dweb:/ipfs/QmRHJXEH2j5fiPp84FTLFKEukTh39TefBcSUVAghjaVNpP"
 			]
 		}
 	},
